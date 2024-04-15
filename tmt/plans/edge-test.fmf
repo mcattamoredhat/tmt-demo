@@ -9,6 +9,11 @@ provision:
     virtualization:
       is-supported: true
 
+/edge-test:
+  summary: Test edge test
+  environment+:
+    TEST_CASE: edge-test
+
 /edge-commit:
   summary: Test edge commit
   environment+:
