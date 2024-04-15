@@ -3,7 +3,9 @@
 cd ../../ || exit 1
 
 function run_tests() {
-	if [ "$TEST_CASE" = "edge-commit" ]; then
+	if [ "$TEST_CASE" = "edge-test" ]; then
+		./ostree-test.sh
+	elif [ "$TEST_CASE" = "edge-commit" ]; then
 		./ostree.sh
 	elif [ "$TEST_CASE" = "edge-installer" ]; then
 		./ostree-ng.sh
