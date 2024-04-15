@@ -9,10 +9,10 @@ provision:
     virtualization:
       is-supported: true
 
-/edge-test:
-  summary: Test edge test
+/edge-mcattamo:
+  summary: Test edge mcattamo test
   environment+:
-    TEST_CASE: edge-test
+    TEST_CASE: edge-mcattamo
 
 /edge-commit:
   summary: Test edge commit
