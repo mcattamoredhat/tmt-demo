@@ -27,6 +27,6 @@ jobs:
           update_pull_request_status: true
           pull_request_status_name: "edge-test-1"
           tf_scope: private
-          tmt_plan_regex: edge-test
+          tmt_plan_regex: edge-mcattamo
           secrets: "DOWNLOAD_NODE=${{ secrets.DOWNLOAD_NODE }}"
 
