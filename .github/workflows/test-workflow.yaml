@@ -13,7 +13,7 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
         with:
-          ref: b5c2d78c668f4f09b95d14af6a972fead048ac11 # updated to latest test branch hash
+          ref: test-branch 
           fetch-depth: 0
 
       - name: Run the tests
