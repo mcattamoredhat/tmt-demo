@@ -9,10 +9,10 @@ provision:
     virtualization:
       is-supported: true
 
-/edge-mcattamo:
-  summary: Test edge mcattamo test
+/iot-commit:
+  summary: Test iot commit
   environment+:
-    TEST_CASE: edge-mcattamo
+    TEST_CASE: iot-commit
 
 /edge-commit:
   summary: Test edge commit

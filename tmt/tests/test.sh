@@ -3,9 +3,7 @@
 cd ../../ || exit 1
 
 function run_tests() {
-	if [ "$TEST_CASE" = "edge-mcattamo" ]; then
-		./ostree-mcattamo.sh
-	elif [ "$TEST_CASE" = "edge-commit" ]; then
+	if [ "$TEST_CASE" = "edge-commit" ] | [ "$TEST_CASE" = "iot-commit" ]; then
 		./ostree.sh
 	elif [ "$TEST_CASE" = "edge-installer" ]; then
 		./ostree-ng.sh
