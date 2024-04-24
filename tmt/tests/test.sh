@@ -4,7 +4,7 @@ set -exuo pipefail
 cd ../../ || exit 1
 
 function run_tests() {
-	if [ "$TEST_CASE" = "edge-commit" ] | [ "$TEST_CASE" = "iot-commit" ]; then
+	if [ "$TEST_CASE" = "edge-commit" ] || [ "$TEST_CASE" = "iot-commit" ]; then
 		./ostree.sh
 	elif [ "$TEST_CASE" = "edge-installer" ]; then
 		./ostree-ng.sh
