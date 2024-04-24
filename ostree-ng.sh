@@ -11,7 +11,7 @@ source /etc/os-release
 ARCH=$(uname -m)
 TEST_UUID=$(uuidgen)
 IMAGE_KEY="ostree-ng-${TEST_UUID}"
-QUAY_REPO_URL="docker://quay.io/rh_ee_mcattamo/test-repository"
+QUAY_REPO_URL="docker://quay.io/rhel-edge/edge-containers"
 QUAY_REPO_TAG=$(tr -dc a-z0-9 < /dev/urandom | head -c 4 ; echo '')
 BIOS_GUEST_ADDRESS=192.168.100.50
 UEFI_GUEST_ADDRESS=192.168.100.51
@@ -667,9 +667,9 @@ sudo podman network inspect edge >/dev/null 2>&1 || sudo podman network create -
 # Run stage repo in OCP4
 greenprint "Running stage repo in OCP4"
 oc login --token="${OCP4_TOKEN}" --server=https://api.ocp-c1.prod.psi.redhat.com:6443 -n rhel-edge --insecure-skip-tls-verify
-oc process -f tools/edge-stage-server-template.yaml -p EDGE_STAGE_REPO_TAG="${QUAY_REPO_TAG}" -p EDGE_STAGE_SERVER_NAME="${STAGE_OCP4_SERVER_NAME}" | oc apply -f -
+oc process -f tools/edge-stage-server-template.yaml -p EDGE_STAGE_REPO_TAG="${QUAY_REPO_TAG}" -p EDGE_STAGE_SERVER_NAME="${STAGE_OCP4_SERVER_NAME}" | oc apply -o -f -
 
-for _ in $(seq 0 60); do
+for _ in $(seq 0 120); do
     RETURN_CODE=$(curl -o /dev/null -s -w "%{http_code}" "${STAGE_OCP4_REPO_URL}refs/heads/${OSTREE_REF}")
     if [[ $RETURN_CODE == 200 ]]; then
         echo "Stage repo is ready"
