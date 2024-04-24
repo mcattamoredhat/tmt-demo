@@ -1,4 +1,5 @@
 #!/bin/bash
+set -exuo pipefail
 
 cd ../../ || exit 1
 
