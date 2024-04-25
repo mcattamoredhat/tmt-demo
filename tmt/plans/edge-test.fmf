@@ -14,6 +14,26 @@ provision:
   environment+:
     TEST_CASE: iot-commit
 
+/iot-installer:
+  summary: Test iot installer
+  environment+:
+    TEST_CASE: iot-installer
+
+/iot-raw-image:
+  summary: Test iot raw image
+  environment+:
+    TEST_CASE: iot-raw-image
+
+/iot-simplified-installer:
+  summary: Test iot simplified installer
+  environment+:
+    TEST_CASE: iot-simplified-installer
+
+/iot-minimal:
+  summary: Test iot minimal raw
+  environment+:
+    TEST_CASE: iot-minimal
+
 /edge-commit:
   summary: Test edge commit
   environment+:
