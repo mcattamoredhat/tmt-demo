@@ -124,10 +124,7 @@ jobs:
           pull_request_status_name: "iot-installer-f39"
           tf_scope: private
           tmt_plan_regex: iot-installer
-          secrets:
-            OCP4_TOKEN: ${{ secrets.OCP4_TOKEN }}
-            QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
-            QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
+          secrets: "OCP4_TOKEN=${{ secrets.OCP4_TOKEN }};QUAY_USERNAME=${{ secrets.QUAY_USERNAME }};QUAY_PASSWORD=${{ secrets.QUAY_PASSWORD }}"
 
   iot-raw-image-f39:
     needs: pr-info
@@ -167,9 +164,7 @@ jobs:
           pull_request_status_name: "iot-raw-image-f39"
           tf_scope: private
           tmt_plan_regex: iot-raw-image
-          secrets:
-            DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-            DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+          secrets: "DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }};DOCKERHUB_PASSWORD=${{ secrets.DOCKERHUB_PASSWORD }}"
  
   minimal-raw-f39:
     needs: pr-info
@@ -209,8 +204,7 @@ jobs:
           pull_request_status_name: "minimal-raw-f39"
           tf_scope: private
           tmt_plan_regex: iot-minimal
-          secrets:
-            DOWNLOAD_NODE: ${{ secrets.DOWNLOAD_NODE }}
+          secrets: "DOWNLOAD_NODE=${{ secrets.DOWNLOAD_NODE }}"
 
 #   pre-arm-minimal-f39:
 #     needs: pr-info
@@ -347,8 +341,7 @@ jobs:
           pull_request_status_name: "iot-simplified-installer-f39"
           tf_scope: private
           tmt_plan_regex: iot-simplified-installer
-          secrets:
-            DOWNLOAD_NODE: ${{ secrets.DOWNLOAD_NODE }}
+          secrets: "DOWNLOAD_NODE=${{ secrets.DOWNLOAD_NODE }}"
 
 #       - name: run ostree-simplified-installer.sh
 #         run: ./ostree-simplified-installer.sh
