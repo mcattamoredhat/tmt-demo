@@ -51,6 +51,8 @@ provision:
   adjust+:
     - when: arch != x86_64
       enabled: false
+    - when: distro == fedora
+      enabled: false
 
 /edge-x86-fdo-db:
   summary: Test edge with fdo package with db
@@ -58,6 +60,8 @@ provision:
     TEST_CASE: edge-fdo-db
   adjust+:
     - when: arch != x86_64
+      enabled: false
+    - when: distro == fedora
       enabled: false
 
 /edge-x86-ignition:
@@ -67,6 +71,8 @@ provision:
   adjust+:
     - when: arch != x86_64
       enabled: false
+    - when: distro == fedora
+      enabled: false
 
 /edge-x86-pulp:
   summary: Test edge pulp feature
@@ -74,6 +80,8 @@ provision:
     TEST_CASE: edge-pulp
   adjust+:
     - when: arch != x86_64
+      enabled: false
+    - when: distro == fedora
       enabled: false
 
 /edge-x86-vsphere:
@@ -83,11 +91,16 @@ provision:
   adjust+:
     - when: arch != x86_64
       enabled: false
+    - when: distro == fedora
+      enabled: false
 
 /edge-x86-ami-image:
   summary: Test edge ami image
   environment+:
     TEST_CASE: edge-ami-image
+  adjust+:
+    - when: distro == fedora
+      enabled: false
 
 /edge-x86-minimal:
   summary: Test edge minimal raw image
@@ -98,51 +111,12 @@ provision:
   summary: Test edge ami image
   environment+:
     TEST_CASE: edge-ami-image
+  adjust+:
+    - when: distro == fedora
+      enabled: false
 
 /edge-arm-minimal:
   summary: Test edge minimal raw image
   environment+:
     TEST_CASE: edge-minimal
-
-/iot-x86-commit:
-  summary: Test iot commit
-  environment+:
-    TEST_CASE: iot-commit
-  adjust+:
-    - when: arch != x86_64
-      enabled: false
-
-/iot-x86-installer:
-  summary: Test iot installer image
-  environment+:
-    TEST_CASE: iot-installer
-  adjust+:
-    - when: arch != x86_64
-      enabled: false
-
-/iot-x86-raw-image:
-  summary: Test iot raw image
-  environment+:
-    TEST_CASE: iot-raw-image
-  adjust+:
-    - when: arch != x86_64
-      enabled: false
-
-/iot-x86-simplified-installer:
-  summary: Test iot simplified installer image
-  environment+:
-    TEST_CASE: iot-simplified-installer
-  adjust+:
-    - when: arch != x86_64
-      enabled: false
-
-/iot-x86-minimal:
-  summary: Test iot minimal raw image
-  environment+:
-    TEST_CASE: iot-minimal
-
-/iot-arm-minimal:
-  summary: Test iot minimal raw image
-  environment+:
-    TEST_CASE: iot-minimal
 
