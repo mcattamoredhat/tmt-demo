@@ -8,8 +8,7 @@ on:
 
 jobs:
   pr-info:
-    if: ${{ github.event.issue.pull_request &&
-            (endsWith(github.event.comment.body, '/test-f39') }}
+    if: ${{ github.event.issue.pull_request && endsWith(github.event.comment.body, '/test-f39') }}
     runs-on: ubuntu-latest
     steps:
       - name: Query author repository permissions
