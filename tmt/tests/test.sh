@@ -1,5 +1,5 @@
 #!/bin/bash
-set -exuo pipefail
+set -euox pipefail
 
 cd ../../ || exit 1
 
@@ -38,7 +38,3 @@ function run_tests() {
 
 run_tests
 exit 0
-
-
-
-

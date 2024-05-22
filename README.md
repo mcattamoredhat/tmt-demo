@@ -1,4 +1,4 @@
-# RHEL-Edge
+# RHEL-Edge2
 
 RHEL-Edge help [documentation](HELP.md)
 
