@@ -11,6 +11,8 @@ provision:
     cpu:
       processors: ">= 2"
     memory: ">= 6 GB"
+context:
+    distro: fedora-39
 
 /edge-x86-commit:
   summary: Test edge commit
@@ -51,7 +53,7 @@ provision:
   adjust+:
     - when: arch != x86_64
       enabled: false
-    - when: distro == fedora
+    - when: distro == fedora-39
       enabled: false
 
 /edge-x86-fdo-db:
@@ -61,7 +63,7 @@ provision:
   adjust+:
     - when: arch != x86_64
       enabled: false
-    - when: distro == fedora
+    - when: distro == fedora-39
       enabled: false
 
 /edge-x86-ignition:
@@ -71,7 +73,7 @@ provision:
   adjust+:
     - when: arch != x86_64
       enabled: false
-    - when: distro == fedora
+    - when: distro == fedora-39
       enabled: false
 
 /edge-x86-pulp:
@@ -81,7 +83,7 @@ provision:
   adjust+:
     - when: arch != x86_64
       enabled: false
-    - when: distro == fedora
+    - when: distro == fedora-39
       enabled: false
 
 /edge-x86-vsphere:
@@ -91,7 +93,7 @@ provision:
   adjust+:
     - when: arch != x86_64
       enabled: false
-    - when: distro == fedora
+    - when: distro == fedora-39
       enabled: false
 
 /edge-x86-ami-image:
@@ -99,7 +101,7 @@ provision:
   environment+:
     TEST_CASE: edge-ami-image
   adjust+:
-    - when: distro == fedora
+    - when: distro == fedora-39
       enabled: false
 
 /edge-x86-minimal:
@@ -111,9 +113,9 @@ provision:
   summary: Test edge ami image
   environment+:
     TEST_CASE: edge-ami-image
-  adjust+:
-    - when: distro == fedora
+  adjust:
       enabled: false
+      when: distro == fedora-39
 
 /edge-arm-minimal:
   summary: Test edge minimal raw image
