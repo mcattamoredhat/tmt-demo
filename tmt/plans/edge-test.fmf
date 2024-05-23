@@ -49,9 +49,7 @@ provision:
   environment+:
     TEST_CASE: edge-fdo-aio
   adjust+:
-    - when: arch != x86_64
-      enabled: false
-    - when: distro == fedora
+    - when: arch != x86_64 or distro == fedora
       enabled: false
 
 /edge-x86-fdo-db:
@@ -59,9 +57,7 @@ provision:
   environment+:
     TEST_CASE: edge-fdo-db
   adjust+:
-    - when: arch != x86_64
-      enabled: false
-    - when: distro == fedora
+    - when: arch != x86_64 or distro == fedora
       enabled: false
 
 /edge-x86-ignition:
@@ -69,9 +65,7 @@ provision:
   environment+:
     TEST_CASE: edge-ignition
   adjust+:
-    - when: arch != x86_64
-      enabled: false
-    - when: distro == fedora
+    - when: arch != x86_64 or distro == fedora
       enabled: false
 
 /edge-x86-pulp:
@@ -79,9 +73,7 @@ provision:
   environment+:
     TEST_CASE: edge-pulp
   adjust+:
-    - when: arch != x86_64
-      enabled: false
-    - when: distro == fedora
+    - when: arch != x86_64 or distro == fedora
       enabled: false
 
 /edge-x86-vsphere:
@@ -89,9 +81,7 @@ provision:
   environment+:
     TEST_CASE: edge-vsphere
   adjust+:
-    - when: arch != x86_64
-      enabled: false
-    - when: distro == fedora
+    - when: arch != x86_64 or distro == fedora
       enabled: false
 
 /edge-x86-ami-image:
