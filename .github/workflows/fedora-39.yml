@@ -59,6 +59,7 @@ jobs:
         with:
           compose: Fedora-39-Updated
           arch: x86_64
+          distro: fedora
           api_key: ${{ secrets.TF_API_KEY }}
           git_url: ${{ needs.pr-info.outputs.repo_url }}
           git_ref: ${{ needs.pr-info.outputs.ref }}
@@ -87,6 +88,7 @@ jobs:
         with:
           compose: Fedora-39-Updated
           arch: aarch64
+          distro: fedora
           api_key: ${{ secrets.TF_API_KEY }}
           git_url: ${{ needs.pr-info.outputs.repo_url }}
           git_ref: ${{ needs.pr-info.outputs.ref }}
