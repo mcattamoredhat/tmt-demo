@@ -251,6 +251,7 @@ LIBVIRT_IMAGE_PATH_UEFI=/var/lib/libvirt/images/"${IMAGE_KEY}-uefi.qcow2"
 MINIMAL_RAW_FILENAME="${COMPOSE_ID}-${MINIMAL_RAW_FILENAME}"
 
 sudo xz -d "${MINIMAL_RAW_FILENAME}"
+ls -lsa
 sudo qemu-img convert -f raw "${COMPOSE_ID}-${MINIMAL_RAW_DECOMPRESSED}" -O qcow2 "$LIBVIRT_IMAGE_PATH_UEFI"
 if [[ "$ID" == "fedora" ]] && [[ "$VERSION_ID" != "38" ]] && [[ "$ARCH" == "aarch64" ]]; then
     # Fedora 39 and 40 ARM require bigger disk space.
